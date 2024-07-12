@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Avaliador de Salas</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/AvaliadorSalas.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <div class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
+            <div class="container">
+                <a href="../" class="navbar-brand text-white">Avaliador de Salas</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><i class="fas fa-bars text-white"></i></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav">
+                        <li class="nav-item" data-bs-theme="light">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="GraficoTemp">Gráfico Temperatura</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="GraficoHum">Gráfico Humidade</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="GraficoCo2">Gráfico Co2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Todas">Tabela Leituras</a>
+                        </li>
+                       
+                    </ul>
+                    
+                    
+                </div>
+            </div>
+        </div>
+
+
+
+            <!-- Navbar
+            ================================================== -->
+       
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-10 text-center">
+            &copy; 2024 - AvaliadorSalas - <a asp-area="" asp-controller="Home" asp-action="Index"> HOME</a>
+        </div>
+            </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/grafico_temp.js" asp-append-version="true"></script>
+    <script src="~/js/grafico_hum.js" asp-append-version="true"></script>
+    <script src="~/js/grafico_co2.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+

@@ -1,0 +1,22 @@
+﻿@model AvaliadorSalas.ViewModels.RelatorioCo2Vm
+
+@{ ViewData["Title"] = "Gráfico CO2"; }
+
+<div class="jumbotron" style="padding-top: 10px; padding-bottom: 10px;">
+</div>
+
+<div class="row">
+
+    <div class="col-lg-10 text-center">
+        <div id="chart_div_co2" style="width: 100%; min-height: 500px"></div>
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['line'] });
+        google.charts.setOnLoadCallback(function () { drawChartCo2(); });
+        $(window).resize(function () { drawChartCo2(); });
+    </script>
+}

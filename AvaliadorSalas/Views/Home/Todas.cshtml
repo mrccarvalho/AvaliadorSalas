@@ -1,0 +1,53 @@
+﻿@model List<AvaliadorSalas.Models.Leitura>
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="row">
+    <div class="col-lg-10 text-center">
+
+            <span classe="text-center"> <b>TODAS AS LEITURAS</b></span><br />
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-10">
+
+        <div class="form-group" style="margin-bottom: 20px">
+            <table class="table table-success table-striped ">
+                <thead>
+                    <tr>
+
+                        <th scope="col">Data</th>
+                        <th scope="col">Tipo de Leitura</th>
+                        <th scope="col">Valor lido</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                        @foreach (Leitura medicao in Model)
+                        {
+                        <tr>
+                            <td>@medicao.DataMedicao</td>
+                            <td>@medicao.Sensor.Nome</td>
+                            <td>@medicao.Medicao</td>
+                        </tr>
+                        }
+                   
+
+
+                </tbody>
+            </table>
+        </div>
+
+
+      
+     
+
+    </div>
+    <div class="col-lg-9">
+    </div>
+</div>
+
+@section Scripts {
+
+}
