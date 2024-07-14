@@ -27,7 +27,6 @@ namespace AvaliadorSalas.Controllers
         /// <summary>
         /// Home page
         /// </summary>
-        /// <param name="id"></param>
         /// <returns></returns>
         public IActionResult Index()
         {
