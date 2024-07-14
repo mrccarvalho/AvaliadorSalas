@@ -124,13 +124,15 @@ void GetReadings() {
   lcd.print(h);
   lcd.print(" %");
 
-    lcd.setCursor(0, 2);
+  delay(5000);
+  lcd.clear();
+  lcd.setCursor(0, 0);
+
   lcd.print("CO2: ");
   lcd.print(c);
   lcd.print(" ppm");
 
-    Serial.print("c (ppm): ");
-    Serial.println(c);
+
   // Atraso entre as leituras
   delay(2000);
 }
